@@ -36,9 +36,26 @@
             // Firebase Setup
             const firebaseConfig = {
                 /**
-                 * ! Place connection script here
-                 * ...
-                 */
+                 * ! Place connection script here*/
+                <!-- The core Firebase JS SDK is always required and must be listed first -->
+                <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+                <!-- TODO: Add SDKs for Firebase products that you want to use
+                    https://firebase.google.com/docs/web/setup#available-libraries -->
+
+                <script>
+                // Your web app's Firebase configuration
+                var firebaseConfig = {
+                    apiKey: "AIzaSyBJUX26Cbjys3-MVMB7DL4wuz_DO_s8ik0",
+                    authDomain: "how-do-i-do-this-b7087.firebaseapp.com",
+                    projectId: "how-do-i-do-this-b7087",
+                    storageBucket: "how-do-i-do-this-b7087.appspot.com",
+                    messagingSenderId: "585732391514",
+                    appId: "1:585732391514:web:8227863f07da3605894e63"
+                };
+                // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
+                </script>
             }
 
             firebase.initializeApp(firebaseConfig)
