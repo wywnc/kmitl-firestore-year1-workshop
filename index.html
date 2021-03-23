@@ -4,17 +4,60 @@
         <script src=https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js></script>
         <script src=https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js></script>
 
+        <script>
+            // Helper script
+            const main = (callback) => {
+                document.addEventListener("DOMContentLoaded", callback, {
+                    once: true
+                })
+            },
+                id = (id) => {
+                    const reference = document.getElementById(id)
+
+                    return Object.assign(reference, {
+                        on: (event, callback) => {
+                            reference.addEventListener(event, callback)
+
+                            return () => reference.removeEventListener(event, callback)
+                        }
+                    })
+                }
+        </script>
         <script defer>
+            // Firebase Setup
             const firebaseConfig = {
-                // config
+                /**
+                 * ! Place connection script here
+                 * ...
+                 * */
             }
 
             firebase.initializeApp(firebaseConfig)
 
             const firestore = firebase.firestore()
+
+            /**
+             * * Main Runtime
+             * 
+             * ? Anything which related to DOM should be run here.
+             * */
+            main(() => {
+                /**
+                 * ? When button with id read is clicked.
+                 * The function will run.
+                 * */
+                id("read").on("click", () => {
+                    id("title").textContent = "Clicked"
+
+                    /**
+                     * * Do something with Firestore here
+                     * */
+                })
+            })
         </script>
     </head>
     <body>
-        <!-- Body -->
+        <h1 id=title>---</h1>
+        <button id=read>Read</button>
     </body>
 </html>
