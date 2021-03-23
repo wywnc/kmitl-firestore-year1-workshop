@@ -6,11 +6,20 @@
 
         <script>
             // Helper script
+
+            /**
+             * * Main Runtime
+             * 
+             * ? Anything which related to DOM should be run in this callback.
+             */
             const main = (callback) => {
                 document.addEventListener("DOMContentLoaded", callback, {
                     once: true
                 })
             },
+                /**
+                 * ? Shorten syntax for querying for element id
+                 */
                 id = (id) => {
                     const reference = document.getElementById(id)
 
@@ -29,7 +38,7 @@
                 /**
                  * ! Place connection script here
                  * ...
-                 * */
+                 */
             }
 
             firebase.initializeApp(firebaseConfig)
@@ -40,18 +49,18 @@
              * * Main Runtime
              * 
              * ? Anything which related to DOM should be run here.
-             * */
+             */
             main(() => {
                 /**
-                 * ? When button with id read is clicked.
-                 * The function will run.
+                 * ? When element with id "read" is clicked.
+                 * ? The function will run.
                  * */
                 id("read").on("click", () => {
                     id("title").textContent = "Clicked"
 
                     /**
                      * * Do something with Firestore here
-                     * */
+                     */
                 })
             })
         </script>
